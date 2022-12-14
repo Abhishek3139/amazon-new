@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import Searchbox from "../SearchBox/SearchBox";
@@ -9,12 +9,15 @@ import {
   yourAccountData,
   yourlistData,
 } from "../../shared/constants";
+import { focusContext } from "../../App";
 import "../Navbar/Navbar.css";
 
 export default function Navbar(props) {
   const navigate = useNavigate();
   const [onOver, setOnOver] = useState(false);
   const [onEngOver, setOnEngOver] = useState(false);
+
+  const { value } = useContext(focusContext);
 
   function hangleHover() {
     setOnOver(true);
@@ -137,7 +140,7 @@ export default function Navbar(props) {
         <div class="cart">
           <FaShoppingCart id="carticon" />
           <span>Cart</span>
-          <span id="cart_count">{props.liftState}</span>
+          <span id="cart_count">{value}</span>
         </div>
       </Link>
       {props.children}

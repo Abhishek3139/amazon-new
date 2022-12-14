@@ -4,14 +4,15 @@ import "../ProductsDetials/ProductsDetialsItem.css";
 import ReactStars from "react-rating-stars-component";
 import { hoodiesData } from "../../shared/constants";
 import TreandingList from "../TreandingList/TreandingList";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Customer from "../CustomerQ&A/CustomerQ&A";
 import Reviews from "../CustomerQ&A/Reviews/Reviews";
-
+import { focusContext } from "../../App";
 export default function ProductsDetialsItem(props, ls) {
   const [focus, setFocus] = useState(false);
   const [product, setProducts] = useState([]);
+  const { value2 } = useContext(focusContext);
 
   let { id } = useParams();
   useEffect(() => {
@@ -216,7 +217,7 @@ export default function ProductsDetialsItem(props, ls) {
             <button
               id="btn_add"
               onClick={() => {
-                props.ls(product);
+                value2(product);
               }}
             >
               Add to Cart
