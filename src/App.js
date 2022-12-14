@@ -28,6 +28,7 @@ export default function App() {
   }
   function focusOnInput() {
     setFocus(true);
+    console.log('My new console')
   }
   function focusOutOnInput() {
     setFocus(false);
