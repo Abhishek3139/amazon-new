@@ -1,5 +1,5 @@
+import { useContext } from "react";
 import Box from "../Components/Box/Box";
-import Checkout from "../Components/CheckOut/CheckOut";
 import HoodiesList from "../Components/HoodiesList/HoodiesList";
 import ImageSlider from "../Components/ImageSlider/ImageSlider";
 import LocalShopCollection from "../Components/Local shops collection/LocalShopCollection";
@@ -15,10 +15,11 @@ import {
   hoodiesData,
   LocalShopsCollectionData,
 } from "../shared/constants";
-
-export const Home = (props) => {
+import { focusContext } from "../context";
+export const Home = () => {
+  const { focusFn } = useContext(focusContext);
   return (
-    <div onClick={props.focusOut}>
+    <div onClick={focusFn}>
       <TreandingList />
       <ImageSlider />
       <div className="flexbox">

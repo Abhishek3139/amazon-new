@@ -1,9 +1,10 @@
 .shopping_Cart {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 1160px;
   height: 350px;
-  margin: 20px;
+  margin: 15px;
   padding: 20px;
+  background-color: white;
 }
 
 .shopping_Cart h1 {
@@ -16,7 +17,7 @@
 }
 
 .item_Cart_Data {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 1158px;
   height: 180px;
   display: flex;
@@ -35,13 +36,15 @@
 }
 .cart_Main_Container {
   display: flex;
+  background-color: #eaeded;
 }
 
 .cart_Sub_Total {
-  border: 1px solid black;
-  width: 300px;
+  /* border: 1px solid black; */
+  width: 280px;
   height: 100px;
-  margin: 20px 0px;
+  margin: 15px 0px;
+  background-color: white;
 }
 .cart_Sub_Total h4 {
   font-size: 18px;

@@ -1,12 +1,13 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import TreandingList from "../TreandingList/TreandingList";
+import { focusContext } from "../../context";
 import "./ShoppingCart.css";
 export default function ShoppingCart(props) {
   const [cartData, setCartData] = useState([]);
-
+  const { productCartData } = useContext(focusContext);
   useEffect(() => {
-    return props.productCartData ? setCartData(props.productCartData[0]) : null;
+    return productCartData ? setCartData(productCartData[0]) : null;
   }, []);
   return (
     <>

@@ -9,7 +9,7 @@ import {
   yourAccountData,
   yourlistData,
 } from "../../shared/constants";
-import { focusContext } from "../../App";
+import { focusContext } from "../../context";
 import "../Navbar/Navbar.css";
 
 export default function Navbar(props) {
@@ -60,7 +60,7 @@ export default function Navbar(props) {
           <span id="s2">Select your address</span>
         </a>
       </div>
-      <Searchbox focus={props.focus} focusLiftState={props.focusLiftState} />
+      <Searchbox />
       <div class="english" onMouseOver={onEngHover} onMouseLeave={onEngLeave}>
         {onEngOver ? (
           <div>

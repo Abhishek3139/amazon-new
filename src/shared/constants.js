@@ -1,4 +1,5 @@
 import Checkout from "../Components/CheckOut/CheckOut";
+import CreateAccount from "../Components/CreateAccount/CreateAccount";
 import ProductsDetialsItem from "../Components/ProductsDetials/ProductsDetialsItem";
 import ShoppingCart from "../Components/ShoppingCart/ShoppingCart";
 import SignInpage from "../Components/SignInPage/SignInPage";
@@ -12,6 +13,7 @@ import {
   SIGNIN,
   SIGNUP,
   CHECKOUT,
+  CREATEACCOUNT,
 } from "./routes";
 
 export const BOX_DATA = [
@@ -839,4 +841,5 @@ export const ROUTES = [
   { routeName: SHOPPING_CART, Component: ShoppingCart },
   { routeName: PRODUCT_DETAILS, Component: ProductsDetialsItem },
   { routeName: CHECKOUT, Component: Checkout },
+  { routeName: CREATEACCOUNT, Component: CreateAccount },
 ];

@@ -48,6 +48,7 @@
   /* border: none; */
   outline: none;
   border: 1px solid #a6a6a6;
+  cursor: pointer;
 }
 .signInBox span {
   font-size: 14px;

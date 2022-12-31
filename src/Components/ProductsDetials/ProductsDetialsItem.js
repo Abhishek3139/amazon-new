@@ -8,11 +8,11 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Customer from "../CustomerQ&A/CustomerQ&A";
 import Reviews from "../CustomerQ&A/Reviews/Reviews";
-import { focusContext } from "../../App";
+import { focusContext } from "../../context";
 export default function ProductsDetialsItem(props, ls) {
   const [focus, setFocus] = useState(false);
   const [product, setProducts] = useState([]);
-  const { value2 } = useContext(focusContext);
+  const { value2, focusFn } = useContext(focusContext);
 
   let { id } = useParams();
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function ProductsDetialsItem(props, ls) {
     return newRating;
   }
   return (
-    <div onClick={props.focusOut}>
+    <div onClick={focusFn}>
       <TreandingList />
       <div className="contanier">
         <div className="mainImg">

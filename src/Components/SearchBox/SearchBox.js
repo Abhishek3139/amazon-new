@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../SearchBox/SearchBox.css";
 import { FaSearch } from "react-icons/fa";
-
+import { focusContext } from "../../context";
 export default function Searchbox(props) {
+  const { focusState } = useContext(focusContext);
   return (
     <>
-      {props.focus ? (
+      {focusState[0] ? (
         <div className="searchboxs">
           <div class="select">
             <select onClick={props.focusLiftState}>
@@ -19,7 +20,7 @@ export default function Searchbox(props) {
             </select>
           </div>
           <div class="search">
-            <input type="search" name="" id="" onClick={props.focusLiftState} />
+            <input type="search" name="" id="" onClick={focusState[1]} />
             <div class="SearchIcon">
               <FaSearch id="sbtn" />
             </div>
@@ -39,7 +40,7 @@ export default function Searchbox(props) {
             </select>
           </div>
           <div class="search">
-            <input type="search" name="" id="" onClick={props.focusLiftState} />
+            <input type="search" name="" id="" onClick={focusState[1]} />
             <div class="SearchIcon">
               <FaSearch id="sbtn" />
             </div>
