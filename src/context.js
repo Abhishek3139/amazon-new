@@ -1,17 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "./firebase-Config";
 import { createContext } from "react";
+import { reducer } from "./reducer";
 // export const AppContext = createContext();
 export const focusContext = createContext();
+
+const inisialState = {
+  cart: [],
+  total: 0,
+  amount: 0,
+};
 
 const AppProvider = ({ children }) => {
   const [count, setCount] = useState(0);
   const [focus, setFocus] = useState(false);
   const [productCartData, setProductCartData] = useState([]);
+  const [state, dispatch] = useReducer(reducer, inisialState);
+  const { cart } = state;
+  const cartCount = state.amount;
+  const cartItemTotal = state.total;
+  // console.log(state.total, state.amount);
+
+  useEffect(() => {
+    dispatch({ type: "GET-TOTAL" });
+  }, [state.cart]);
 
   // --------------------------Authentication code-------------------------------
   const [input, setInput] = useState({ email: "", password: "" });
@@ -65,23 +81,21 @@ const AppProvider = ({ children }) => {
   //   console.log("My usrt:", user);
   // }, []);
   // -----------------------------------------------------------------------------
-  function incCount(product) {
-    const productExist = productCartData.find((item) => item.id === product.id);
-    if (productExist) {
-      setProductCartData(
-        productCartData.map((item) =>
-          item.id === product.id
-            ? { ...productExist, quantity: productExist.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setProductCartData([...productCartData, { ...product, quantity: 1 }]);
-    }
 
-    setProductCartData([product]);
-    setCount(count + 1);
-  }
+  const getProductDetails = (product) => {
+    setProductCartData((prevProduct) => {
+      return [...prevProduct, product];
+    });
+  };
+
+  const productFetched = () => {
+    console.log(productCartData);
+    dispatch({ type: "PRODUCT-FETCHED", payload: productCartData });
+  };
+  useEffect(() => {
+    productFetched();
+    console.log(productCartData);
+  }, [productCartData]);
 
   function focusOnInput() {
     setFocus(true);
@@ -92,8 +106,12 @@ const AppProvider = ({ children }) => {
   return (
     <focusContext.Provider
       value={{
+        ...state,
+        cart,
+        cartCount,
+        cartItemTotal,
         value: [count, setCount],
-        value2: incCount,
+        getProductDetails,
         focus,
         focusState: [focus, setFocus],
         focusFn: focusOutOnInput,

@@ -318,6 +318,8 @@ export const hoodiesData = [
       "Funky Monkey - NASA Printed Hoodie, with Embroidery patch on Sleeves",
     star_Rating_No: "256",
     item_Price: 799.0,
+    amount: 1,
+
     links: "Visit the FUNKY MONKEY Store",
     discount: "-60%",
     mrp: "M.R.P.:₹1,999.00",
@@ -391,6 +393,8 @@ export const hoodiesData = [
       "SXV 'California Adventure’ Printed Cool Aesthetic Sweatshirt Hoodie",
     star_Rating_No: "256",
     item_Price: 1799.0,
+    amount: 1,
+
     links: "Visit the FUNKY MONKEY Store",
     discount: "-60%",
     mrp: "M.R.P.:₹1,999.00",
@@ -466,6 +470,8 @@ export const hoodiesData = [
       "SXV 'TAKE ME to The Moon’ Printed Cool Aesthetic Sweatshirt Hoodie",
     star_Rating_No: "256",
     item_Price: 999.0,
+    amount: 1,
+
     links: "Visit the FUNKY MONKEY Store",
     discount: "-60%",
     mrp: "M.R.P.:₹1,999.00",
@@ -540,6 +546,8 @@ export const hoodiesData = [
     heading: "Be savage Basic Men's Cotton Hoodie",
     star_Rating_No: "256",
     item_Price: 1100.0,
+    amount: 1,
+
     links: "Visit the FUNKY MONKEY Store",
     discount: "-60%",
     mrp: "M.R.P.:₹1,999.00",
@@ -615,6 +623,8 @@ export const hoodiesData = [
       "Lasmo Men's Hooded Neck Regular Fit PC Fleece NASA Printed Hoodie for Winters",
     star_Rating_No: "256",
     item_Price: 599.0,
+    amount: 1,
+
     links: "Visit the FUNKY MONKEY Store",
     discount: "-60%",
     mrp: "M.R.P.:₹1,999.00",
@@ -689,6 +699,8 @@ export const hoodiesData = [
     heading: "ADRO Basics Men's Printed Hoodies",
     star_Rating_No: "256",
     item_Price: 989.0,
+    amount: 1,
+
     links: "Visit the FUNKY MONKEY Store",
     discount: "-60%",
     mrp: "M.R.P.:₹1,999.00",
@@ -763,6 +775,7 @@ export const hoodiesData = [
     heading: "SXV 'You are Loved’ Printed Cool Aesthetic Sweatshirt Hoodie",
     star_Rating_No: "256",
     item_Price: 999.0,
+    amount: 1,
     links: "Visit the FUNKY MONKEY Store",
     discount: "-60%",
     mrp: "M.R.P.:₹1,999.00",

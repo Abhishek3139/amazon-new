@@ -12,7 +12,8 @@ import { focusContext } from "../../context";
 export default function ProductsDetialsItem(props, ls) {
   const [focus, setFocus] = useState(false);
   const [product, setProducts] = useState([]);
-  const { value2, focusFn } = useContext(focusContext);
+  const { value2, focusFn, getProductDetails, addToCart } =
+    useContext(focusContext);
 
   let { id } = useParams();
   useEffect(() => {
@@ -216,8 +217,12 @@ export default function ProductsDetialsItem(props, ls) {
           <div className=" btn_buy">
             <button
               id="btn_add"
+              // onClick={() => {
+              //   value2(product);
+              // }}
               onClick={() => {
-                value2(product);
+                getProductDetails(product);
+                addToCart(id);
               }}
             >
               Add to Cart

@@ -17,7 +17,7 @@ export default function Navbar(props) {
   const [onOver, setOnOver] = useState(false);
   const [onEngOver, setOnEngOver] = useState(false);
 
-  const { value } = useContext(focusContext);
+  const { cartCount } = useContext(focusContext);
 
   function hangleHover() {
     setOnOver(true);
@@ -136,11 +136,11 @@ export default function Navbar(props) {
         <h5>Returns</h5>
         <span>& Orders</span>
       </div>
-      <Link to={"/ShoppingCart"}>
+      <Link to={"/ShoppingCart"} style={{ textDecoration: "none" }}>
         <div class="cart">
           <FaShoppingCart id="carticon" />
           <span>Cart</span>
-          <span id="cart_count">{value}</span>
+          <span id="cart_count">{cartCount}</span>
         </div>
       </Link>
       {props.children}
